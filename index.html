@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Temple Tycoon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'gd-dark': '#1e140a',
+              'gd-stone': '#3c2a1a',
+              'gd-dark-stone': '#2a1e12',
+              'gd-sand': '#e0cfa2',
+              'gd-light-sand': '#f5eeda',
+              'gd-gold': '#f7c62f',
+              'gd-blue': '#3d8eff',
+              'gd-red': '#ff4d4d',
+              'gd-green': '#4dff4d',
+            },
+            fontFamily: {
+              'sans': ['"Press Start 2P"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #1e140a;
+        background-image: 
+          linear-gradient(rgba(60, 42, 26, 0.5) 1px, transparent 1px),
+          linear-gradient(to right, rgba(60, 42, 26, 0.5) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      /* For custom scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #2a1e12; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #f7c62f;
+        border-radius: 2px;
+        border: 2px solid #2a1e12;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #e0cfa2;
+      }
+      
+      @keyframes drop-in {
+        from {
+          opacity: 0;
+          transform: translateY(-20px) scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      .dropper-anim {
+        animation: drop-in 0.3s ease-out forwards;
+      }
+
+      button:disabled {
+        filter: grayscale(80%) brightness(50%);
+        cursor: not-allowed;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.26.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body class="antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
